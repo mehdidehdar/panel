@@ -76,7 +76,6 @@ button,
 button:hover,
 button:focus,
 input,
-input:hover,
 input:focus {
     border: none;
     outline: none;
@@ -1266,16 +1265,20 @@ span.apexcharts-legend-text {
     border-radius: 15px;
     box-shadow: var(--shadow1);
     position: relative;
-    width: min(90%,620px);
+    width: min(90%,700px);
     display: flex;
 
 }
 .login-info{
     padding: 30px;
+    width: calc(100% - 210px - 60px);
+}
+.login-info form{
+    width: 100%;
 }
 .login-logo {
     background: var(--primary);
-    width: 30%;
+    width: 210px;
     border-radius: 0 15px 15px 0;
     display: flex;
     align-items: center;
@@ -1298,7 +1301,7 @@ span.apexcharts-legend-text {
     justify-content: space-between;
     background: var(--background1);
     padding: 10px 15px;
-    width: 95%;
+    width: auto;
     border-radius: 5px;
     margin-bottom: 15px;
 }
@@ -1308,6 +1311,7 @@ span.apexcharts-legend-text {
     width: 90%;
     border-radius: 5px;
     direction: ltr;
+    color: var(--color1);
 }
 
 .login-form input[type=number],
@@ -1340,8 +1344,9 @@ a.back-btn:hover {
     border-radius: 5px;
     font-size: 18px;
     box-shadow: var(--shadow-accent);
-    margin-top: 50px;
+    margin-top: 20px;
     transition: 0.3s all;
+    font-family: unset;
 }
 
 .login-form button:hover {
@@ -1365,7 +1370,7 @@ a.back-btn:hover {
 .login-form:before {
     content: " ";
     background: var(--primary);
-    width: calc(50% - 110px);
+    width: calc(50% - 140px);
     height: 100vh;
     right: 0;
     top: 0;
@@ -2548,6 +2553,23 @@ body.dark .audioplayer-bar-loaded{
     position: fixed;
     transition: 0.3s;
 }
+/*table*/
+#table-box{
+    background-color: var(--background2);
+    color: var(--color1) !important;
+}
+#table-box tr,#table-box td{
+    color: var(--color1);
+}
+/*form*/
+#form-box{
+    background-color: var(--background2);
+    color: var(--color1) !important;
+}
+#form-box input{
+    background-color: transparent;
+    color: var(--color1);
+}
 
 @media screen and (max-width:600px) {
     .login-form{
@@ -2637,4 +2659,54 @@ body.dark .audioplayer-bar-loaded{
         padding: 0;
         margin: 0 8px;
     }
+    .login-info{
+        width: auto;
+    }
+    .login-form button{
+        font-size: 14px;
+    }
+}
+html[dir=rtl] table.dataTable>thead>tr>th:not(.sorting_disabled),
+table.dataTable>thead>tr>td:not(.sorting_disabled) {
+    padding-right: 1.5rem;
+    padding-left: 30px;
+}
+
+.dir_right table.dataTable thead .sorting::before,
+.dir_right table.dataTable thead .sorting_asc::before,
+.dir_right table.dataTable thead .sorting_desc::before,
+.dir_right table.dataTable thead .sorting_asc_disabled::before,
+.dir_right table.dataTable thead .sorting_desc_disabled::before,
+.dir_right table.dataTable thead .sorting::after,
+.dir_right table.dataTable thead .sorting_asc::after,
+.dir_right table.dataTable thead .sorting_desc::after,
+.dir_right table.dataTable thead .sorting_asc_disabled::after,
+.dir_right table.dataTable thead .sorting_desc_disabled::after {
+    left: 0.7rem !important;
+    right: unset !important;
+}
+table.table-bordered.dataTable th, table.table-bordered.dataTable td {
+    border-left-width: 1px;
+    border-color: #d4d8dd !important;
+    text-align: center !important;
+}
+th{
+    text-align: center!important;
+}
+td{
+    text-align: center!important;
+}
+ul.pagination li.disabled{
+    opacity: 0.5;
+}
+ul.pagination li{
+
+    margin: 0 5px;
+}
+ul.pagination li a{
+    text-align: center !important;
+    border-radius:0 !important;
+}
+.form-select{
+    padding: 5px 30px 5px 10px !important;
 }

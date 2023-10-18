@@ -8,7 +8,9 @@
     <title>Panel</title>
     <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="icons/style.css">
-
+<!--    datatable-->
+  <link rel="stylesheet" href="plugins/datatable/datatables-bs5/datatables.bootstrap5.css">
+  <link rel="stylesheet" href="plugins/datatable/datatables-responsive-bs5/responsive.bootstrap5.css">
     <!-- Theme Colors -->
     <style id="colors">
       :root{
@@ -37,7 +39,7 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
 
-<body class="dir_right">
+<body class="index-box dir_right">
     <div id="sidebar" class="main-sidebar ">
               <div class="nav flex-column nav-pills menu-bar" id="menu-bar" role="tablist" aria-orientation="vertical">
                 <button class="menu-btn opened_right" id="menu-btn" onclick="changeMenuStyle()">
@@ -53,7 +55,7 @@
                 <button class="nav-link" id="v-map-tab" data-bs-toggle="pill" data-bs-target="#v-map" type="button" role="tab" aria-controls="v-map" aria-selected="false"><i class="ic-location"></i><span>نقشه</span></button>
                 <button class="nav-link" id="v-users-tab" data-bs-toggle="pill" data-bs-target="#v-users" type="button" role="tab" aria-controls="v-users" aria-selected="false"><i class="ic-user"></i><span>مدیریت کاربران</span></button>
                 <button class="nav-link" id="v-statistics-tab" data-bs-toggle="pill" data-bs-target="#v-statistics" type="button" role="tab" aria-controls="v-statistics" aria-selected="false"><i class="ic-statistics"></i><span>آمار</span></button>
-                <button class="nav-link" id="v-plugins-tab" data-bs-toggle="pill" data-bs-target="#v-plugins" type="button" role="tab" aria-controls="v-plugins" aria-selected="false"><i class="ic-plug"></i><span>افزودنی ها</span></button>  
+                <button class="nav-link" id="v-plugins-tab" data-bs-toggle="pill" data-bs-target="#v-plugins" type="button" role="tab" aria-controls="v-plugins" aria-selected="false"><i class="ic-plug"></i><span>افزودنی ها</span></button>
                 <div class="bottom-bar">
                   <button onclick="changeStyle()"><i id="cs-icon" class="ic-dark"></i></button>
                   <a href="#"><i class="ic-question"></i></a>
@@ -80,7 +82,7 @@
                                     داشبورد
                                 </a>
                                 <ul class="dropdown-menu">
-                                  <li><a class="dropdown-item" href="#">صفحه اصلی</a></li>
+                                  <li><a class="dropdown-item" data-index="1" href="#">صفحه اصلی</a></li>
                                   <li><a class="dropdown-item" href="#">آمار</a></li>
                                   <li><a class="dropdown-item" href="#">بروزرسانی ها</a></li>
                                   <li class="ol-hover"><a class="dropdown-item" href="#">تنظیمات پنل</a>
@@ -99,6 +101,8 @@
                                   <li><a class="dropdown-item" href="#">مدیریت فایل ها</a></li>
                                   <li><a class="dropdown-item" href="#">ویرایش رمزعبور</a></li>
                                   <li><a class="dropdown-item" href="#">اطلاعیه ها</a></li>
+                                  <li><a class="dropdown-item" data-index="4" href="#">جدول</a></li>
+                                  <li><a class="dropdown-item" data-index="5" href="#">فرم</a></li>
                                 </ul>
                               </li>
                               <li class="nav-item">
@@ -313,7 +317,7 @@
             </div>
           </div>
         </div>
-        <div class="widgets">
+        <div class="infobox widgets" data-index="1">
           <div class="row">
             <div class="col-12">
               <div class="main-chart widget-box">
@@ -424,7 +428,8 @@
             </div>
           </div>
         </div>
-        
+      <!-- Responsive Datatable -->
+
         
     </div>
 
@@ -669,6 +674,7 @@
     <script src="plugins/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="plugins/progresscircle/progresscircle.js"></script>
     <script src="plugins/apexcharts/apexcharts.min.js"></script>
+
 
     <!-- Main Scripts -->
     <script src="scripts/main.js"></script>

@@ -283,3 +283,24 @@ document.querySelector(".account-menu-mobile").addEventListener("click",function
         document.querySelector(".ul_mobile_account").style.right="unset";
     }
 })
+$(".table-menu").on("click",function (){
+   $("#main-content .infobox").css("display","none")
+    let ind=$(this).attr("data-index");
+    $("#main-content .infobox").each(function (){
+        if($(this).att("data-index")==ind){
+            $(this).css("display","block")
+        }
+    })
+})
+$("#navbarScroll .nav-item").on("click",function (){
+
+    $("#navbarScroll .nav-item .nav-link").css("backgroundColor","unset")
+    $(this).find(".nav-link").css("backgroundColor","var(--bs-primary-bg-subtle)")
+    $(this).classList.add("active")
+})
+$("#navbarScroll .dropdown-menu li").on("click",function (){
+
+    $("#navbarScroll .dropdown-menu .li").css("backgroundColor","unset")
+    $(this).find(".dropdown-item").css("backgroundColor","var(--bs-primary-bg-subtle)")
+    $(this).classList.add("active")
+})
